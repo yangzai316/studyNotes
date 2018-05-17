@@ -1,2 +1,2 @@
 # studyNotes
-study notes
+这个仓库主要就是平时学习之后的一些笔记，觉得对你有帮助的话就STAR一下，如果有问题的话可以直接Issues我...
