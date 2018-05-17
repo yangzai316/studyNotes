@@ -28,7 +28,7 @@ Pragma 是 Http/1.0 的头部字段，只有一个值 no-cache， 功能和 Cach
 ### Expires
 Expires 是缓存到期时间，以服务器时间为参考，优先级比 Cache-Control: max-age 低。
 过程如下图</br>
- ![强缓存](https://raw.githubusercontent.com/yangzaiwangzi/studyNotes/master/img/httpcache/%E5%BC%BA%E7%BC%93%E5%AD%98.jpg)</br>
+ ![强缓存](https://raw.githubusercontent.com/yangzaiwangzi/studyNotes/master/img/httpcache/%E5%BC%BA%E7%BC%93%E5%AD%982.0.jpg)</br>
 ## 协商缓存
 当没有命中强缓存，则会验证协商缓存。</br>
 协商缓存有两种形式：*文件最后一次修改时间*、*与文件内容对应的hash值*
