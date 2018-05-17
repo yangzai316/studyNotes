@@ -38,4 +38,5 @@ Expires 是缓存到期时间，以服务器时间为参考，优先级比 Cache
  ![强缓存](https://raw.githubusercontent.com/yangzaiwangzi/studyNotes/master/img/httpcache/%E5%8D%8F%E5%95%86%E7%BC%93%E5%AD%98.jpg)</br>
 ## 最后
 至此，HTTP缓存，就差不多结束了，整体的过程如下图：</br>
- ![强缓存](https://raw.githubusercontent.com/yangzaiwangzi/studyNotes/master/img/httpcache/http%E7%BC%93%E5%AD%98%E8%AF%A6%E7%BB%86.jpg)
+ ![强缓存](https://raw.githubusercontent.com/yangzaiwangzi/studyNotes/master/img/httpcache/http%E7%BC%93%E5%AD%98%E8%AF%A6%E7%BB%86.jpg)</br></br>
+ *有帮助STAR我，有问题Issues我，谢谢*
