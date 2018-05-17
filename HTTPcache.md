@@ -12,7 +12,7 @@
  ![http缓存](https://raw.githubusercontent.com/yangzaiwangzi/studyNotes/master/img/httpcache/http%E7%BC%93%E5%AD%98.jpg)</br>
 下面详细解释一下，强缓存和协商缓存；
 ## 强缓存
-主要是通过判断文件最后一次修改的时间是否匹配，来判断是否需要使用缓存。</br>
+响应头中直接通过下面的字段定义是否需要缓存，如何缓存。</br>
 相关请求头字段：</br>
 ### Cache-Control
 Cache-Control 是 Http/1.1 新增的字段，是控制浏览器缓存的主要字段。</br> 
@@ -26,4 +26,16 @@ Pragma 是 Http/1.0 的头部字段，只有一个值 no-cache， 功能和 Cach
 ### Expires
 Expires 是缓存到期时间，以服务器时间为参考，优先级比 Cache-Control: max-age 低。
 过程如下图</br>
- ![强缓存](https://raw.githubusercontent.com/yangzaiwangzi/studyNotes/master/img/httpcache/http%E7%BC%93%E5%AD%98.jpg)</br>
+ ![强缓存](https://raw.githubusercontent.com/yangzaiwangzi/studyNotes/master/img/httpcache/%E5%BC%BA%E7%BC%93%E5%AD%98.jpg)</br>
+## 协商缓存
+当没有命中强缓存，则会验证协商缓存。</br>
+协商缓存有两种形式：*文件最后一次修改时间*、*与文件内容对应的hash值*
+### 通过文件最后一次修改时间
+上次一个请求返回的Reponse中会有Last-modified，携带着和服务器中存储着一样的最后一次文件修改的时间，再次请求时request会携带If-Modified-Since（就是Last-modified）和服务器存储的最后一次文件修改的时间比对，如果一样就是没有修改文件，则命中，反之亦然。
+### 通过与文件内容对应的hash值
+最后一次文件修改时间不一样，不代表文件确实被修改过了，比如：修改了某文件，有修改回来了，这样文件的修改时间发生变化，但是文件的内容没有变化，所以不同的会生成唯一的hash与之对应，在上次一个请求返回的Reponse中的ETag返回给客户端，再次请求时request会携带If-Modified-Match（就是ETag）与服务器存储的hash对比，一样则没有修改文件，则命中，</br>
+过程如下图：</br>
+ ![强缓存](https://raw.githubusercontent.com/yangzaiwangzi/studyNotes/master/img/httpcache/%E5%8D%8F%E5%95%86%E7%BC%93%E5%AD%98.jpg)</br>
+## 最后
+至此，HTTP缓存，就差不多结束了，整体的过程如下图：</br>
+ ![强缓存](https://raw.githubusercontent.com/yangzaiwangzi/studyNotes/master/img/httpcache/http%E7%BC%93%E5%AD%98%E8%AF%A6%E7%BB%86.jpg)
