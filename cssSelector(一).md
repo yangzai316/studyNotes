@@ -62,7 +62,7 @@ element:nth-child(n) 选择其父元素中的第n个子元素。<br>
 element:nth-last-child(n) 选择其父元素中的倒数第n个子元素。<br>
 element:nth-of-type(n) 选择其父元素中同类型（都是element）中的第n个同级兄弟元素。<br>
 element:nth-last-of-type(n) 选择其父元素中同类型（都是element）中的倒数第n个同级兄弟元素。<br>
-element:last-child 选择器其父元素中最后一个子元素(最后一个元素必须为element,注意和:last-of-type的区别)。<br>
+element:last-child 选择器其父元素中最后一个子元素(最后一个元素必须为element,注意和:last-of-type的区别)。<br><br>
 :root 选择文档的根元素,在HTML中根元素始终是HTML元素。<br>
 :empty 选择没有任何子级的元素（包括文本节点）。<br>
 :target 和锚点配合使用 # 锚的名称是在一个文件中链接到某个元素的URL，元素被链接到目标元素；:target可选择跳转到target元素。<br>
@@ -80,7 +80,7 @@ element:last-child 选择器其父元素中最后一个子元素(最后一个元
 :valid 选择表单元素的值需要根据指定条件验证时，只作用于能指定区间值的元素，例如 input 元素中的 min 和 max 属性，及正确的 email 字段, 合法的数字字段等。<br>
 :invalid 选择用于在表单元素中的值是非法时，只作用于能指定区间值的元素，例如 input 元素中的 min 和 max 属性，及正确的 email 字段, 合法的数字字段等
 
-**本文主要参考《菜鸟教程》**
+*本文主要参考《菜鸟教程》*
 
 
 
