@@ -63,23 +63,24 @@ element:nth-last-child(n) 选择其父元素中的倒数第n个子元素。<br>
 element:nth-of-type(n) 选择其父元素中同类型（都是element）中的第n个同级兄弟元素。<br>
 element:nth-last-of-type(n) 选择其父元素中同类型（都是element）中的倒数第n个同级兄弟元素。<br>
 element:last-child 选择器其父元素中最后一个子元素(最后一个元素必须为element,注意和:last-of-type的区别)。<br>
-:root 选择文档的根元素,在HTML中根元素始终是HTML元素。
-:empty 选择没有任何子级的元素（包括文本节点）。
-:target 和锚点配合使用 # 锚的名称是在一个文件中链接到某个元素的URL，元素被链接到目标元素；:target可选择跳转到target元素。
-:enabled 选择每个启用的的表单元素（主要用于表单元素，与:disabled相反）。
-:disabled 选择每个禁用的的表单元素（主要用于表单元素，与:enabled相反）。
-:checked 选择每个选中的输入表单元素（仅适用于单选按钮或复选框）。
-:not(element) 选择每个不是指定的元素的剩余元素。
-::selection 选择元素中被用户选中或处于高亮状态的部分(选中某段文案),只可以应用于少数的CSS属性：color, background, cursor,和outline。
-:out-of-range 选择元素的值在指定区间之外时，只作用于能指定区间之外值的元素，例如 input 元素中的 min 和 max 属性。
+:root 选择文档的根元素,在HTML中根元素始终是HTML元素。<br>
+:empty 选择没有任何子级的元素（包括文本节点）。<br>
+:target 和锚点配合使用 # 锚的名称是在一个文件中链接到某个元素的URL，元素被链接到目标元素；:target可选择跳转到target元素。<br>
+:enabled 选择每个启用的的表单元素（主要用于表单元素，与:disabled相反）。<br>
+:disabled 选择每个禁用的的表单元素（主要用于表单元素，与:enabled相反）。<br>
+:checked 选择每个选中的输入表单元素（仅适用于单选按钮或复选框）。<br>
+:not(element) 选择每个不是指定的元素的剩余元素。<br>
+::selection 选择元素中被用户选中或处于高亮状态的部分(选中某段文案),只可以应用于少数的CSS属性：color, background, cursor,和outline。<br>
+:out-of-range 选择元素的值在指定区间之外时，只作用于能指定区间之外值的元素，例如 input 元素中的 min 和 max 属性。<br>
+:in-range 选择元素的值在指定区间之内时，只作用于能指定区间值的元素，例如 input 元素中的 min 和 max 属性。<br>
+:read-write 选择可读及可写的元素（如：input设置了redyonly,就无法选中），目前, 在大多浏览器中, :read-write 选择器只使用于设置了input 和 textarea 元素。<br>
+:read-only 选择设置了 "readonly" 属性的元素，表单元素可以设置 "readonly" 属性来定义元素只读。<br>
+:optional 选择表单元素是可选项时，表单元素中如果没有特别设置 required 属性即为 optional 属性，只适用于表单元素: input、select、 textarea。<br>
+:required 选择表单元素是必填项时。表单元素可以使用 required 属性来设置必填项，只适用于表单元素: input, select 和 textarea。<br>
+:valid 选择表单元素的值需要根据指定条件验证时，只作用于能指定区间值的元素，例如 input 元素中的 min 和 max 属性，及正确的 email 字段, 合法的数字字段等。<br>
+:invalid 选择用于在表单元素中的值是非法时，只作用于能指定区间值的元素，例如 input 元素中的 min 和 max 属性，及正确的 email 字段, 合法的数字字段等
 
-
-
-
-
-
-
-
+**本文主要参考《菜鸟教程》**
 
 
 
