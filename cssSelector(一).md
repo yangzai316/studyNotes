@@ -38,9 +38,9 @@ element[target=yang] 选择所有使用target="yang"的element元素。<br>
 element[target~=yang] 选择属性包含单词"yang"的所有element元素(是单词，不是对应字母)。<br>
 element[target|=yang] 选择target属性的起始值="yang"的所有元素(值是整个单词，单独像lang="yang"，或者使用连字符(-)如lang ="yang-xxx")。
 #### 伪类选择器
-:focus 选择具有焦点的元素。
-element:first-child 选择element其父级的第一个子元素，且这个子元素需为element。
-:before 选择对象前插入内容（后期css3为了区分伪类和伪元素，用::before代替:before，但后者仍然可使用）。
-:after 选择对象后插入内容插入内容（同上）。
+:focus 选择具有焦点的元素。<br>
+element:first-child 选择element其父级的第一个子元素，且这个子元素需为element。<br>
+:before 选择对象前插入内容（后期css3为了区分伪类和伪元素，用::before代替:before，但后者仍然可使用）。<br>
+:after 选择对象后插入内容插入内容（同上）。<br>
 element:lang(yang) 选择带有指定 yang 的 lang 属性的元素（值是整个单词，单独像lang="yang"，或者使用连字符(-)如lang ="yang-xxx"）。
 
