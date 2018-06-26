@@ -36,7 +36,7 @@ css1还有其他的伪类选择器<br>
 element[target] 选择所有带有target属性的element元素。<br>
 element[target=yang] 选择所有使用target="yang"的element元素。<br>
 element[target~=yang] 选择属性包含单词"yang"的所有element元素(是单词，不是对应字母)。<br>
-element[target|=yang] 选择target属性的起始值="yang"的所有元素(值是整个单词，单独像lang="yang"，或者使用连字符(-)如lang ="yang-xxx")。
+element[target|=yang] 选择target属性的起始值="yang"的所有元素(值是整个单词，单独像target="yang"，或者使用连字符(-)，如target ="yang-xxx")。
 #### 伪类选择器
 :focus 选择具有焦点的元素。<br>
 element:first-child 选择element其父级的第一个子元素，且这个子元素需为element。<br>
