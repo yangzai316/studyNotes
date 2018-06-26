@@ -33,8 +33,8 @@ css1还有其他的伪类选择器<br>
 #### 相邻兄弟元素选择器 
 [element/.class/#id/...]+[element/.class/#id/...] 选择指定的元素之后紧跟的元素。
 #### 属性选择器
-element[target] 选择所有带有target属性的element元素。
-element[target=yang] 选择所有使用target="yang"的element元素。
-element[target~=yang] 选择属性包含单词"yang"的所有element元素(是单词，不是对应字母)。
-element[target|=yang] 选择target属性的起始值="en"的所有元素(单词的连接需要用-，其他的均不行)
+element[target] 选择所有带有target属性的element元素。<br>
+element[target=yang] 选择所有使用target="yang"的element元素。<br>
+element[target~=yang] 选择属性包含单词"yang"的所有element元素(是单词，不是对应字母)。<br>
+element[target|=yang] 选择target属性的起始值="en"的所有元素(单词的连接需要用-，其他的均不行)。
 
