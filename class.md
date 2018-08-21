@@ -107,7 +107,7 @@ const MyClass = class Me {
 const MyClass = class { 
   /* ... */ 
 };
-```
+```javascript
 ### 不存在变量提升
 类不存在变量提升（hoist），这一点与 ES5 完全不同。
 ### name 属性
@@ -118,7 +118,7 @@ Point.name // "Point"
 ```
 ### Class 的静态方法
 类相当于实例的原型，所有在类中定义的方法，都会被实例继承。如果在一个方法前，加上static关键字，就表示该方法不会被实例继承，而是直接通过类来调用，这就称为“静态方法”。<br>
-```
+```javascript
 class Foo {
   static classMethod() {
     return 'hello';
@@ -154,7 +154,7 @@ ES6 为new命令引入了一个new.target属性，该属性一般用在构造函
 ## Class 的继承
 Class 可以通过extends关键字实现继承，这比 ES5 的通过修改原型链实现继承，要清晰和方便很多。<br>
 子类必须在constructor方法中调用super方法，否则新建实例时会报错。这是因为子类自己的this对象，必须先通过父类的构造函数完成塑造，得到与父类同样的实例属性和方法，然后再对其进行加工，加上子类自己的实例属性和方法。如果不调用super方法，子类就得不到this对象。
-```
+```javascript
 class ColorPoint extends Point {
   constructor(x, y, color) {
     super(x, y); // 调用父类的constructor(x, y)
