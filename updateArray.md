@@ -117,3 +117,81 @@ flatMap()方法对原数组的每个成员执行一个函数（相当于执行Ar
 ```
 flatMap()方法的参数是一个遍历函数，该函数可以接受三个参数，分别是当前数组成员、当前数组成员的位置（从零开始）、原数组。<br>
 第二个参数，用来绑定遍历函数里面的this。
+### 10、数组实例 map()
+返回一个新数组，新数组中的元素为原始数组元素调用函数处理后的值。<br>
+map() 不会对空数组进行检测，不会改变原始数组。
+```javascript
+array.map(function(currentValue,index,arr), thisValue)
+```
+```javascript
+var numbers = [1, 5, 10, 15];
+var doubles = numbers.map(function(x) {
+   return x * 2;
+});
+// doubles is now [2, 10, 20, 30]
+// numbers is still [1, 5, 10, 15] 
+```
+### 11、数组实例 filter()
+创建一个新的数组，新数组中的元素是通过检查指定数组中符合条件的所有元素。<br>
+```javascript
+array.filter(function(currentValue,index,arr), thisValue)
+```
+```javascript
+var words = ["aaaaa", "ccccc", "ccccs", "sssss", "ccccs", "bbbbbbbb"];
+
+var longWords = words.filter(function(word){
+  return word.length > 6;
+});
+
+// ["bbbbbbb"]
+ 
+```
+### 12、数组实例 reduce()
+接收一个函数作为累加器，数组中的每个值（从左到右）开始缩减，最终计算为一个值。<br>
+```javascript
+array.reduce(function(total, currentValue, currentIndex, arr), initialValue)
+```
+```javascript 
+var numbers = [0, 1, 2, 3];
+ 
+var result = numbers.reduce(function(accumulator, currentValue) {
+    return accumulator + currentValue;
+});
+ 
+console.log(result);
+//6 
+```
+### 13、数组实例 some()
+检测数组中至少一个元素是否通过所提供回调函数的条件。（注意和every()的区别）
+```javascript
+array.some(function(currentValue,index,arr),thisValue)
+```
+```javascript
+function isBiggerThan10(element, index, array) {
+  return element > 10;
+}
+
+[2, 5, 8, 1, 4].some(isBiggerThan10);  // false
+[12, 5, 8, 1, 4].some(isBiggerThan10); // true 
+```
+### 14、数组实例 every()
+用于检测数组所有元素是否都符合指定条件。（注意和some()的区别）
+```javascript
+array.every(function(currentValue,index,arr), thisValue)
+```
+```javascript
+function isBigEnough(element, index, array) { 
+  return element >= 10; 
+} 
+
+[12, 5, 8, 130, 44].every(isBigEnough);   // false 
+[12, 54, 18, 130, 44].every(isBigEnough); // true 
+```
+
+*文章内容参考阮一峰&弹指壹挥间的文章内容，如有侵权联系删除*
+
+
+
+
+
+
