@@ -108,11 +108,54 @@ Object.is(+0, -0) // false
 Object.is(NaN, NaN) // true
 ```
 #### Object.assign()
+Object.assign方法用于对象的合并，将源对象（source）的所有可枚举属性，复制到目标对象（target）
+```javascript
+const target = { a: 1 };
 
+const source1 = { b: 2 };
+const source2 = { c: 3 };
+Object.assign(target, source1, source2);
+target // {a:1, b:2, c:3}
+//Object.assign方法的第一个参数是目标对象，后面的参数都是源对象
+//如果目标对象与源对象有同名属性，或多个源对象有同名属性，则后面的属性会覆盖前面的属性。
+//如果只有一个参数，Object.assign会直接返回该参数。
+//如果只有一个参数，该参数不是对象，则会先转成对象，然后返回。
+//如果只有一个参数，由于undefined和null无法转成对象，所以如果它们作为参数，就会报错。
+//如果非对象参数出现在源对象的位置（即非首参数），那么处理规则有所不同。首先，这些参数都会转成对象，如果无法转成对象，就会跳过。这意味着，如果undefined和null不在首参数，就不会报错。
+//其他类型的值（即数值、字符串和布尔值）不在首参数，也不会报错。但是，除了字符串会以数组形式，拷贝入目标对象，其他值都不会产生效果。
+//属性名为 Symbol 值的属性，也会被Object.assign拷贝。
+```
+##### 注意点：
+1、浅拷贝：Object.assign方法实行的是浅拷贝，而不是深拷贝。<br>
+2、同名属性的替换：对于这种嵌套的对象，一旦遇到同名属性，Object.assign的处理方法是替换，而不是添加。<br>
+3、处理数组：Object.assign可以用来处理数组，但是会把数组视为对象。
+```javascript
+Object.assign([1, 2, 3], [4, 5])
+// [4, 5, 3]
+```
+4、取值函数的处理：Object.assign只能进行值的复制，如果要复制的值是一个取值函数，那么将求值后再复制。
+#### 属性的可枚举性和遍历
+对象的每个属性都有一个描述对象（Descriptor），用来控制该属性的行为。<br>
+Object.getOwnPropertyDescriptor方法可以获取该属性的描述对象。
+```javascript
+let obj = { foo: 123 };
+Object.getOwnPropertyDescriptor(obj, 'foo')
+//  {
+//    value: 123,
+//    writable: true,
+//    enumerable: true,   //true：”可枚举性“
+//    configurable: true
+//  }
 
+有四个操作会忽略enumerable为false（不可枚举性）的属性。
 
+for...in循环：只遍历对象自身的和*继承的*可枚举的属性。
+Object.keys()：返回对象自身的所有可枚举的属性的键名。
+JSON.stringify()：只串行化对象自身的可枚举的属性。
+Object.assign()： 只拷贝对象自身的可枚举的属性。
 
-
+//操作中引入继承的属性会让问题复杂化，大多数时候，我们只关心对象自身的属性。所以，尽量不要用for...in循环，而用Object.keys()代替。
+```
 
 
 
