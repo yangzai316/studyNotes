@@ -236,14 +236,9 @@ obj.foo() // "world"
 #### Object.keys()，Object.values()，Object.entries()
 ##### Object.keys()
 ES5 引入了Object.keys方法，返回一个数组，成员是参数对象自身的（不含继承的）所有可遍历的（enumerable）属性的键名。<br>
+ES6 引入了跟Object.keys配套的Object.values和Object.entries，作为遍历一个对象的补充手段，供for...of循环使用。<br>
 Object.values方法返回一个数组，成员是参数对象自身的（不含继承的）所有可遍历（enumerable）属性的键值。<br>
 Object.entries方法返回一个数组，成员是参数对象自身的（不含继承的）所有可遍历（enumerable）属性的键值对数组。
-```javascript
-var obj = { foo: 'bar', baz: 42 };
-Object.keys(obj)
-// ["foo", "baz"]
-```
-ES6 引入了跟Object.keys配套的Object.values和Object.entries，作为遍历一个对象的补充手段，供for...of循环使用。
 ```javascript
 let {keys, values, entries} = Object;
 let obj = { a: 1, b: 2, c: 3 };
@@ -260,9 +255,20 @@ for (let [key, value] of entries(obj)) {
   console.log([key, value]); // ['a', 1], ['b', 2], ['c', 3]
 }
 ```
-
-
-
+#### 对象的扩展运算符
+对象的解构赋值用于从一个对象取值，相当于将目标对象自身的所有可遍历的（enumerable）、但尚未被读取的属性，分配到指定的对象上面。所有的键和它们的值，都会拷贝到新对象上面。
+```javascript
+let { x, y, ...z } = { x: 1, y: 2, a: 3, b: 4 };
+x // 1
+y // 2
+z // { a: 3, b: 4 }
+```
+对象的扩展运算符（...）用于取出参数对象的所有可遍历属性，拷贝到当前对象之中。
+```javascript
+let z = { a: 3, b: 4 };
+let n = { ...z };
+n // { a: 3, b: 4 }
+```
 
 
 
