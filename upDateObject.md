@@ -1,5 +1,5 @@
 # ES6对对象的扩展
-#### 属性和方法的简洁表示法
+#### 1、属性和方法的简洁表示法
 ```javascript
 //属性：
   const baz = {foo};
@@ -37,7 +37,7 @@ const obj = {
   }
 };
 ```
-#### 属性名表达式
+#### 2、属性名表达式
 JavaScript 定义对象的属性，有两种方法。
 ```javascript
 // 方法一
@@ -76,7 +76,7 @@ const myObject = {
 myObject // Object {[object Object]: "valueB"}
 //上面代码中，[keyA]和[keyB]得到的都是[object Object]，所以[keyB]会把[keyA]覆盖掉，而myObject最后只有一个[object Object]属性。
 ```
-#### 方法的 name 属性 
+#### 3、方法的 name 属性 
 函数的name属性，返回函数名。<br>
 对象方法也是函数，因此也有name属性。<br>
 有特殊情况。
@@ -89,7 +89,7 @@ const person = {
 
 person.sayName.name   // "sayName"
 ```
-#### Object.is()
+#### 4、Object.is()
 ES5 比较两个值是否相等，只有两个运算符：相等运算符（==）和严格相等运算符（===）。<br>
 它们都有缺点，前者会自动转换数据类型，后者的NaN不等于自身，以及+0等于-0。<br>
 JavaScript 缺乏一种运算，在所有环境中，只要两个值是一样的，它们就应该相等。<br>
@@ -107,7 +107,7 @@ NaN === NaN // false
 Object.is(+0, -0) // false
 Object.is(NaN, NaN) // true
 ```
-#### Object.assign()
+#### 5、Object.assign()
 Object.assign方法用于对象的合并，将源对象（source）的所有可枚举属性，复制到目标对象（target）
 ```javascript
 const target = { a: 1 };
@@ -134,7 +134,7 @@ Object.assign([1, 2, 3], [4, 5])
 // [4, 5, 3]
 ```
 4、取值函数的处理：Object.assign只能进行值的复制，如果要复制的值是一个取值函数，那么将求值后再复制。
-#### 属性的可枚举性和遍历
+#### 6、属性的可枚举性和遍历
 对象的每个属性都有一个描述对象（Descriptor），用来控制该属性的行为。<br>
 Object.getOwnPropertyDescriptor方法可以获取该属性的描述对象。
 ```javascript
@@ -156,11 +156,11 @@ Object.assign()： 只拷贝对象自身的可枚举的属性。
 
 //操作中引入继承的属性会让问题复杂化，大多数时候，我们只关心对象自身的属性。所以，尽量不要用for...in循环，而用Object.keys()代替。
 ```
-#### __proto__属性，Object.setPrototypeOf()，Object.getPrototypeOf()
-##### __proto__属性
+#### 7、__proto__属性，Object.setPrototypeOf()，Object.getPrototypeOf()
+##### （1）__proto__属性
 __proto__属性（前后各两个下划线），用来读取或设置当前对象的prototype对象。目前，所有浏览器（包括 IE11）都部署了这个属性。<br>
 该属性没有写入 ES6 的正文，而是写入了附录，原因是__proto__前后的双下划线，说明它本质上是一个内部属性，而不是一个正式的对外的 API，只是由于浏览器广泛支持，才被加入了 ES6。标准明确规定，只有浏览器必须部署这个属性，其他运行环境不一定需要部署，而且新的代码最好认为这个属性是不存在的。因此，无论从语义的角度，还是从兼容性的角度，都不要使用这个属性，而是使用下面的Object.setPrototypeOf()（写操作）、Object.getPrototypeOf()（读操作）、Object.create()（生成操作）代替
-##### Object.setPrototypeOf()
+##### （2）Object.setPrototypeOf()
 Object.setPrototypeOf方法的作用与__proto__相同，用来设置一个对象的prototype对象，返回参数对象本身。<br>
 它是 ES6 正式推荐的设置原型对象的方法。
 ```javascript
@@ -175,9 +175,9 @@ obj.x // 10
 obj.y // 20
 obj.z // 40
 ```
-##### Object.getPrototypeOf()
+##### （3）Object.getPrototypeOf()
 该方法与Object.setPrototypeOf方法配套，用于读取一个对象的原型对象。
-#### super 关键字
+#### 8、super 关键字
 this关键字总是指向函数所在的当前对象；<br>
 ES6 又新增了另一个类似的关键字super，指向当前对象的原型对象。
 ```javascript
@@ -233,8 +233,7 @@ Object.setPrototypeOf(obj, proto);
 obj.foo() // "world"
 //上面代码中，super.foo指向原型对象proto的foo方法，但是绑定的this却还是当前对象obj，因此输出的就是world。
 ```
-#### Object.keys()，Object.values()，Object.entries()
-##### Object.keys()
+#### 9、Object.keys()，Object.values()，Object.entries()
 ES5 引入了Object.keys方法，返回一个数组，成员是参数对象自身的（不含继承的）所有可遍历的（enumerable）属性的键名。<br>
 ES6 引入了跟Object.keys配套的Object.values和Object.entries，作为遍历一个对象的补充手段，供for...of循环使用。<br>
 Object.values方法返回一个数组，成员是参数对象自身的（不含继承的）所有可遍历（enumerable）属性的键值。<br>
@@ -255,7 +254,7 @@ for (let [key, value] of entries(obj)) {
   console.log([key, value]); // ['a', 1], ['b', 2], ['c', 3]
 }
 ```
-#### 对象的扩展运算符
+#### 10、对象的扩展运算符
 对象的解构赋值用于从一个对象取值，相当于将目标对象自身的所有可遍历的（enumerable）、但尚未被读取的属性，分配到指定的对象上面。所有的键和它们的值，都会拷贝到新对象上面。
 ```javascript
 let { x, y, ...z } = { x: 1, y: 2, a: 3, b: 4 };
