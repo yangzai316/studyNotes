@@ -160,5 +160,117 @@ Object.assign()： 只拷贝对象自身的可枚举的属性。
 ##### __proto__属性
 __proto__属性（前后各两个下划线），用来读取或设置当前对象的prototype对象。目前，所有浏览器（包括 IE11）都部署了这个属性。<br>
 该属性没有写入 ES6 的正文，而是写入了附录，原因是__proto__前后的双下划线，说明它本质上是一个内部属性，而不是一个正式的对外的 API，只是由于浏览器广泛支持，才被加入了 ES6。标准明确规定，只有浏览器必须部署这个属性，其他运行环境不一定需要部署，而且新的代码最好认为这个属性是不存在的。因此，无论从语义的角度，还是从兼容性的角度，都不要使用这个属性，而是使用下面的Object.setPrototypeOf()（写操作）、Object.getPrototypeOf()（读操作）、Object.create()（生成操作）代替
+##### Object.setPrototypeOf()
+Object.setPrototypeOf方法的作用与__proto__相同，用来设置一个对象的prototype对象，返回参数对象本身。<br>
+它是 ES6 正式推荐的设置原型对象的方法。
+```javascript
+let proto = {};
+let obj = { x: 10 };
+Object.setPrototypeOf(obj, proto);
+
+proto.y = 20;
+proto.z = 40;
+
+obj.x // 10
+obj.y // 20
+obj.z // 40
+```
+##### Object.getPrototypeOf()
+该方法与Object.setPrototypeOf方法配套，用于读取一个对象的原型对象。
+#### super 关键字
+this关键字总是指向函数所在的当前对象；<br>
+ES6 又新增了另一个类似的关键字super，指向当前对象的原型对象。
+```javascript
+const proto = {
+  foo: 'hello'
+};
+
+const obj = {
+  foo: 'world',
+  find() {
+    return super.foo;
+  }
+};
+
+Object.setPrototypeOf(obj, proto);
+obj.find() // "hello"
+
+//super关键字表示原型对象时，只能用在对象的方法之中，用在其他地方都会报错。
+// 报错 super用在属性里面
+const obj = {
+  foo: super.foo
+}
+
+// 报错 只有对象方法的简写法可以让 JavaScript 引擎确认，定义的是对象的方法。
+const obj = {
+  foo: () => super.foo
+}
+
+// 报错 只有对象方法的简写法可以让 JavaScript 引擎确认，定义的是对象的方法。
+const obj = {
+  foo: function () {
+    return super.foo
+  }
+}
+```
+```javascript
+const proto = {
+  x: 'hello',
+  foo() {
+    console.log(this.x);
+  },
+};
+
+const obj = {
+  x: 'world',
+  foo() {
+    super.foo();
+  }
+}
+
+Object.setPrototypeOf(obj, proto);
+
+obj.foo() // "world"
+//上面代码中，super.foo指向原型对象proto的foo方法，但是绑定的this却还是当前对象obj，因此输出的就是world。
+```
+#### Object.keys()，Object.values()，Object.entries()
+##### Object.keys()
+ES5 引入了Object.keys方法，返回一个数组，成员是参数对象自身的（不含继承的）所有可遍历的（enumerable）属性的键名。<br>
+Object.values方法返回一个数组，成员是参数对象自身的（不含继承的）所有可遍历（enumerable）属性的键值。<br>
+Object.entries方法返回一个数组，成员是参数对象自身的（不含继承的）所有可遍历（enumerable）属性的键值对数组。
+```javascript
+var obj = { foo: 'bar', baz: 42 };
+Object.keys(obj)
+// ["foo", "baz"]
+```
+ES6 引入了跟Object.keys配套的Object.values和Object.entries，作为遍历一个对象的补充手段，供for...of循环使用。
+```javascript
+let {keys, values, entries} = Object;
+let obj = { a: 1, b: 2, c: 3 };
+
+for (let key of keys(obj)) {
+  console.log(key); // 'a', 'b', 'c'
+}
+
+for (let value of values(obj)) {
+  console.log(value); // 1, 2, 3
+}
+
+for (let [key, value] of entries(obj)) {
+  console.log([key, value]); // ['a', 1], ['b', 2], ['c', 3]
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
 
 
