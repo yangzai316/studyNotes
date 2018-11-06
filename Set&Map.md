@@ -136,7 +136,9 @@ WeakMap与Map的区别有两点：<br>
 - set()
 - has()
 - delete()。
+<br><br>
 
+*文章内容参考阮一峰老师的《ECMAScript 6 入门》文章内容，如有侵权联系删除*
 
 
 
