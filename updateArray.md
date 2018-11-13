@@ -150,6 +150,7 @@ var longWords = words.filter(function(word){
 接收一个函数作为累加器，数组中的每个值（从左到右）开始缩减，最终计算为一个值。<br>
 ```javascript
 array.reduce(function(total, currentValue, currentIndex, arr), initialValue)
+//initialValue 传递给函数的初始值
 ```
 ```javascript 
 var numbers = [0, 1, 2, 3];
