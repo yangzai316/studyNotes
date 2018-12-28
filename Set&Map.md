@@ -58,13 +58,13 @@ forEach()：使用回调函数遍历每个成员<br>
 #### 4、WeakSet
 WeakSet 结构与 Set 类似，也是不重复的值的集合。<br>
 但是，它与 Set 有区别：<br>
-- WeakSet 的成员只能是对象，而不能是其他类型的值，不是对象，加入 WeaKSet 就会报错
-- WeakSet 中的对象都是弱引用，即垃圾回收机制不考虑 WeakSet 对该对象的引用
-- WeakSet 不可遍历<br>
+WeakSet 的成员只能是对象，而不能是其他类型的值，不是对象，加入 WeaKSet 就会报错
+WeakSet 中的对象都是弱引用，即垃圾回收机制不考虑 WeakSet 对该对象的引用
+WeakSet 不可遍历<br>
 <br>
 WeakSet 是一个构造函数，可以使用new命令，创建 WeakSet 数据结构<br>
 作为构造函数，WeakSet 可以接受一个数组或类似数组的对象作为参数<br>
-- 方法：<br>
+方法：<br>
 WeakSet.prototype.add(value)：向 WeakSet 实例添加一个新成员。<br>
 WeakSet.prototype.delete(value)：清除 WeakSet 实例的指定成员。<br>
 WeakSet.prototype.has(value)：返回一个布尔值，表示某个值是否在 WeakSet 实例之中。<br>
