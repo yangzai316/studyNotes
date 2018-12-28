@@ -68,7 +68,7 @@ WeakSet 是一个构造函数，可以使用new命令，创建 WeakSet 数据结
 WeakSet.prototype.add(value)：向 WeakSet 实例添加一个新成员。<br>
 WeakSet.prototype.delete(value)：清除 WeakSet 实例的指定成员。<br>
 WeakSet.prototype.has(value)：返回一个布尔值，表示某个值是否在 WeakSet 实例之中。<br>
-WeakSet 没有size属性，没有办法遍历它的成员（是因为成员都是弱引用，随时可能消失，遍历机制无法保证成员的存在，很可能刚刚遍历结束，成员就取不到了。WeakSet 的一个用处，是储存 DOM 节点，而不用担心这些节点从文档移除时，会引发内存泄漏。）<br>
+WeakSet 没有size属性，没有办法遍历它的成员（是因为成员都是弱引用，随时可能消失，遍历机制无法保证成员的存在，很可能刚刚遍历结束，成员就取不到了。WeakSet 的一个用处，是储存 DOM 节点，而不用担心这些节点从文档移除时，会引发内存泄漏。
 #### 5、Map
 构造函数<br>
 它类似于对象，也是键值对的集合，但是“键”的范围不限于字符串，各种类型的值（包括对象）都可以当作键。<br>
