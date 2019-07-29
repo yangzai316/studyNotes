@@ -11,6 +11,7 @@
 [ES6中的Set 和 Map](https://github.com/yangzaiwangzi/studyNotes/blob/master/Set&Map.md)<br>
 [深拷贝和浅拷贝](https://github.com/yangzaiwangzi/studyNotes/blob/master/extend.md)<br>
 [基础前端项目部署-简记](https://github.com/yangzaiwangzi/studyNotes/blob/master/centOsToProject.md)   
-[字符串](https://github.com/yangzaiwangzi/studyNotes/blob/master/upDateString.md)    
+[字符串](https://github.com/yangzaiwangzi/studyNotes/blob/master/upDateString.md)
+[npm包发布-组件](https://github.com/yangzaiwangzi/studyNotes/blob/master/publishNpm.md)
 
 
