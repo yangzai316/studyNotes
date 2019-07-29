@@ -13,5 +13,6 @@
 [基础前端项目部署-简记](https://github.com/yangzaiwangzi/studyNotes/blob/master/centOsToProject.md)   
 [字符串](https://github.com/yangzaiwangzi/studyNotes/blob/master/upDateString.md)
 [npm包发布-组件](https://github.com/yangzaiwangzi/studyNotes/blob/master/publishNpm.md)
+[基础前端项目部署-简记](https://github.com/yangzaiwangzi/studyNotes/blob/master/centOsToProject.md)
 
 
