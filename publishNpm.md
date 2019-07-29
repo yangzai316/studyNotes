@@ -1,4 +1,4 @@
-## 发布npm包
+## 发布npm包-vue组件
 
 ## install package
 ``` bash
