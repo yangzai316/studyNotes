@@ -15,7 +15,7 @@ console.log(typeof b);//object
 console.log(new String);
 ```
 结果如图：
-![string](https://raw.githubusercontent.com/yangzaiwangzi/learningNotes/master/img/string.jpg)
+![string](https://github.com/yangzaiwangzi/studyNotes/blob/master/img/httpcache/string.jpg)
 可以清楚的看到string的属性和方法。
 #### 2.1、属性
 constructor
