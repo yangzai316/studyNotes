@@ -110,3 +110,4 @@ center|交叉轴的中心对齐
 baseline|每个项目的第一行文字底线对齐
 stretch|拉伸项目
 
+参考文章：*[  基础前端项目部署-简记](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html)*
