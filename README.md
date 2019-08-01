@@ -9,10 +9,11 @@
 [ES6对数组的扩展](https://github.com/yangzaiwangzi/studyNotes/blob/master/updateArray.md)<br>
 [ES6中的Set 和 Map](https://github.com/yangzaiwangzi/studyNotes/blob/master/Set&Map.md)<br>
 [深拷贝和浅拷贝](https://github.com/yangzaiwangzi/studyNotes/blob/master/extend.md)<br>
-[字符串](https://github.com/yangzaiwangzi/studyNotes/blob/master/upDateString.md)
+[字符串](https://github.com/yangzaiwangzi/studyNotes/blob/master/upDateString.md)<br>
 
 ### HTML
-...
+[Flex 布局](https://github.com/yangzaiwangzi/studyNotes/blob/master/flexible.md)<br>
+
 ### CSS
 [css 选择器](https://github.com/yangzaiwangzi/studyNotes/blob/master/cssSelector.md)<br>
 
