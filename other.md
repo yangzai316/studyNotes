@@ -38,4 +38,7 @@ fun的this指向thisArg对象
 call：数据类型判断【Object.prototype.toString.call(data)】<br>
 apply:求数组最大值【Math.max.apply(Math,[data])】<br>
 bind:回调函数中This的丢失<br>
-*[参考](https://juejin.im/post/5d469e0851882544b85c32ef)*
+
+- 原生实现call、apply、bind
+
+*[参考文章](https://juejin.im/post/5d469e0851882544b85c32ef)*
