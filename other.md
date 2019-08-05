@@ -12,6 +12,8 @@ window.history.popstate()<br>
 在浏览历史中添加历史记录,但是并不触发跳转；<br>
 每当同一个文档的浏览历史（即history对象）出现变化时，就会触发popstate事件<br>
 
+---
+
 ### call、apply、bind
 - 含义
 借用方法<br>
@@ -42,3 +44,5 @@ bind:回调函数中This的丢失<br>
 - 原生实现call、apply、bind
 
 *[参考文章](https://juejin.im/post/5d469e0851882544b85c32ef)*
+
+---
