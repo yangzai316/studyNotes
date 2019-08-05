@@ -20,5 +20,5 @@
 ### Other
 [图解HTTP 缓存](https://github.com/yangzaiwangzi/studyNotes/blob/master/HTTPcache.md)<br>
 [基础前端项目部署-简记](https://github.com/yangzaiwangzi/studyNotes/blob/master/centOsToProject.md)<br> 
-[npm包发布-组件](https://github.com/yangzaiwangzi/studyNotes/blob/master/publishNpm.md)<br
-[乱写](https://github.com/yangzaiwangzi/studyNotes/blob/master/other.md)
+[npm包发布-组件](https://github.com/yangzaiwangzi/studyNotes/blob/master/publishNpm.md)<br> 
+[乱写](https://github.com/yangzaiwangzi/studyNotes/blob/master/other.md)<br> 
