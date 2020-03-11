@@ -1,3 +1,4 @@
+```
 <template>
   <div>
     <div class="box">
@@ -155,3 +156,5 @@ table {
   }
 }
 </style>
+
+```
