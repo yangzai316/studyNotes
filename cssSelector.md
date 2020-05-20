@@ -31,13 +31,13 @@ css1还有其他的伪类选择器<br>
 #### 子代选择器
 [element/.class/#id/...]>[element/.class/#id/...] 选择父级下直接子代元素（如果元素不是父元素的直接子元素(孙子级别的不行），则不会被选择）。
 #### 相邻兄弟元素选择器 
-[element/.class/#id/...]+[element/.class/#id/...] 选择指定的元素之后紧跟的元素。
-#### 属性选择器+
+[element/.class/#id/...]+[element/.class/#id/...] 选择指定的元素之后紧跟的元素（尽获取第一个）。
+#### 属性选择器
 element[target] 选择所有带有target属性的element元素。<br>
 element[target=yang] 选择所有使用target="yang"的element元素。<br>
 element[target~=yang] 选择属性包含单词"yang"的所有element元素(是单词，不是对应字母)。<br>
 element[target|=yang] 选择target属性的起始值="yang"的所有元素(值是整个单词，单独像target="yang"，或者使用连字符(-)，如target ="yang-xxx")。
-#### 伪类选择器+
+#### 伪类选择器
 :focus 选择具有焦点的元素。<br>
 element:first-child 选择element其父级的第一个子元素，且这个子元素需为element。<br>
 :before 选择对象前插入内容（后期css3为了区分伪类和伪元素，用::before代替:before，但后者仍然可使用）。<br>
@@ -47,13 +47,13 @@ element:lang(yang) 选择带有指定 yang 的 lang 属性的元素（值是整�
 
 ## css3选择器
 重点是css3选择器，随着浏览器的不断升级和IE的落寞和妥协，现在使用css3的兼容性问题越来越小，必须赶紧Get。
-#### 相邻兄弟选择器+
-element1~element2 选择在 element1 后面的所有element2；element1 和 element2 这两种元素必须具有相同的父元素，但 element2 不必紧跟在 element1 的后面。
-#### 属性选择器++
+#### 相邻兄弟选择器
+element1~element2 选择在 element1 后面的所有element2(可为多个)；element1 和 element2 这两种元素必须具有相同的父元素，但 element2 不必紧跟在 element1 的后面。
+#### 属性选择器
 element[target^="yang"] 选择属性值带指定的值yang开始的所有元素element(是element[target|=yang]加强版)。<br>
 element[target$="yang"] 选择属性值带指定的值yang结尾的所有元素element。<br>
 element[target*="yang"] 选择属性值含有指定值yang的所有元素element。
-#### 伪类选择器++
+#### 伪类选择器
 element:first-of-type 选择其父级的第一个子element元素(该element可以不是其父级的第一个元素，和:nth-of-type(1)同效果)。<br>
 element:last-of-type 选择其父级的最后一个子element元素（同上，和:nth-last-of-type(1)同效果，注意和:last-child的区别）。<br>
 element:only-of-type 选择其父级下只有唯一一个element元素（如：其父级有很多子元素，只有一个p元素，就可以用这个方法选择,注意和only-child的区别)。<br>
