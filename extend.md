@@ -199,5 +199,4 @@ var obj2 = deepCopy(obj1);
 ```
 结论：完美实现深拷贝。如需要拷贝原型链上的属性，可始用for...in...，进行循环处理，在里面可通过hasOwnProperty()来开关这个需求。
 ##### 参考文章
-[一篇文章彻底说清 JS 的深拷贝/浅拷贝](https://mp.weixin.qq.com/s/FoNX_Vn1Xy0pElr3GyTgbw)<br>
 [低门槛彻底理解JavaScript中的深拷贝和浅拷贝](https://mp.weixin.qq.com/s/FoNX_Vn1Xy0pElr3GyTgbw)
